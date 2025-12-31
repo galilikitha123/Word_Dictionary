@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,6 +35,16 @@
         <button id="exportFavorites" class="icon-btn" aria-label="Export favorites" title="Export favorites">
           <i class="fa-solid fa-file-export"></i>
         </button>
+
+        <!-- Social links -->
+        <div class="social-links" aria-label="Social profiles">
+          <a class="icon-btn social" href="https://github.com/galilikitha123" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+          </a>
+          <a class="icon-btn social" href="https://www.linkedin.com/in/likitha-gali/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+          </a>
+        </div>
       </section>
     </div>
 
@@ -48,8 +59,7 @@
         <div class="wod-title-row">
           <span class="wod-badge">Word of the day</span>
           <div class="wod-actions">
-            <button id="wodRefresh" class="wod-icon" title="Refresh word"><i
-                class="fa-solid fa-rotate-right"></i></button>
+            <button id="wodRefresh" class="wod-icon" title="Refresh word"><i class="fa-solid fa-rotate-right"></i></button>
             <button id="wodCollapse" class="wod-icon" title="Minimize"><i class="fa-solid fa-chevron-up"></i></button>
           </div>
         </div>
@@ -122,7 +132,26 @@
   <!-- Toast notifications -->
   <div id="toastContainer" class="toast-container" role="status" aria-live="polite"></div>
 
+  <!-- Footer: copyright -->
+  <footer class="site-footer" aria-label="Footer">
+    <div class="footer-inner">
+      <span class="footer-text">© <span id="year"></span> Likitha Gali. All rights reserved.</span>
+      <div class="social-links">
+        <a class="icon-btn social" href="https://github.com/galilikitha123" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
+        </a>
+        <a class="icon-btn social" href="https://www.linkedin.com/in/likitha-gali/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
   <script src="script.js"></script>
+  <script>
+    // Set current year in footer without theme impact
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 
 </html>

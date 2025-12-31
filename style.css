@@ -1,3 +1,4 @@
+
 /* Full styles from the final version */
 :root { --gradient-start:#4158D0; --gradient-middle:#C850C0; --gradient-end:#FFCC70; --card-bg:rgba(255,255,255,.12); --text-primary:#fff; --text-secondary:#e0e0e0; --accent:#FFD700; --button-gradient:linear-gradient(45deg,#FF6B6B,#FFE66D); --card-border:rgba(255,255,255,.22); --shadow-1:0 8px 32px rgba(31,38,135,.20); --shadow-2:0 12px 40px rgba(31,38,135,.30); --panel-bg:rgba(255,255,255,.10); --chip-bg:rgba(255,255,255,.15); --wod-gradient:linear-gradient(135deg,rgba(255,255,255,.22),rgba(255,255,255,.10)); --success:#22c55e; --info:#0ea5e9; --warn:#f59e0b; --danger:#ef4444 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -6,9 +7,15 @@ body{min-height:100vh;background:linear-gradient(-45deg,var(--gradient-start),va
 .box{max-width:1100px;margin:0 auto;padding:2rem}
 .header{position:relative;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-bottom:.5rem;margin-bottom:1.2rem;z-index:2}
 .header h1{font-size:3.2rem;line-height:1.1;background:linear-gradient(to right,#fff,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow:2px 2px 4px rgba(0,0,0,.1);animation:fadeInDown 1s ease}
-.header-actions{display:flex;gap:.6rem}
+.header-actions{display:flex;gap:.6rem;align-items:center}
+
+/* Social links container in header/footer */
+.social-links{display:flex;gap:.6rem;align-items:center}
 .icon-btn{width:40px;height:40px;border-radius:50%;border:none;cursor:pointer;background:var(--button-gradient);box-shadow:0 4px 15px rgba(0,0,0,.2);display:flex;align-items:center;justify-content:center}
 .icon-btn i{color:#fff}
+.icon-btn.social{background:var(--button-gradient)}
+.icon-btn.social:hover{transform:translateY(-2px)}
+
 .inputbox{background:rgba(255,255,255,.15);backdrop-filter:blur(10px);padding:1.2rem;border-radius:20px;border:1px solid var(--card-border);display:flex;gap:1rem;align-items:center;box-shadow:var(--shadow-1);margin-top:.6rem;position:relative;z-index:1}
 .inputbox:hover{transform:translateY(-3px)}
 .search{flex:1;padding:1rem 1.2rem;border-radius:15px;border:2px solid transparent;background:rgba(255,255,255,.9);font-size:1.05rem;color:#333}
@@ -103,3 +110,8 @@ body{min-height:100vh;background:linear-gradient(-45deg,var(--gradient-start),va
 @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeInDown{from{opacity:0;transform:translateY(-40px)}to{opacity:1;transform:translateY(0)}}
 :root.light{--card-bg:rgba(255,255,255,.75);--panel-bg:rgba(255,255,255,.85);--card-border:rgba(0,0,0,.10);--text-primary:#1a1a1a;--text-secondary:#545454;--accent:#B7791F}
+
+/* Footer (copyright) — consistent with theme variables */
+.site-footer{margin-top:2rem;background:var(--panel-bg);border:1px solid var(--card-border);border-radius:16px;box-shadow:var(--shadow-1)}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:.8rem;padding:.9rem 1rem}
+.footer-text{color:var(--text-secondary);font-weight:600}

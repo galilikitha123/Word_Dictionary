@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Word Dictionary</title>
+
+  <!-- Icons & Animations -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="box">
+    <div class="header">
+      <h1>English Dictionary</h1>
+
+      <!-- Header actions -->
+      <section class="header-actions">
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle theme" title="Toggle theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <button id="exportFavorites" class="icon-btn" aria-label="Export favorites" title="Export favorites">
+          <i class="fa-solid fa-file-export"></i>
+        </button>
+      </section>
+    </div>
+
+    <div class="inputbox">
+      <input type="text" class="search" placeholder="Search your word..." autofocus/>
+      <button class="btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+
+    <!-- Word of the day: HERO CARD -->
+    <section id="wodCard" class="wod-card" aria-live="polite">
+      <div class="wod-left">
+        <div class="wod-title-row">
+          <span class="wod-badge">Word of the day</span>
+          <div class="wod-actions">
+            <button id="wodRefresh" class="wod-icon" title="Refresh word"><i class="fa-solid fa-rotate-right"></i></button>
+            <button id="wodCollapse" class="wod-icon" title="Minimize"><i class="fa-solid fa-chevron-up"></i></button>
+          </div>
+        </div>
+
+        <h2 id="wodWord" class="wod-word">Loading…</h2>
+        <div class="wod-ipa-row">
+          <button id="wodIpa" class="wod-ipa" disabled>/</button>
+          <button id="wodAudioBtn" class="wod-audio" title="Play pronunciation" disabled>
+            <i class="fa-solid fa-volume-high"></i>
+          </button>
+        </div>
+
+        <p id="wodMeaning" class="wod-meaning"></p>
+        <p id="wodExample" class="wod-example"></p>
+
+        <div class="wod-cta-row">
+          <button id="wodLearn" class="wod-cta"><i class="fa-solid fa-book-open"></i> Learn more</button>
+        </div>
+      </div>
+
+      <div class="wod-right">
+        <i class="fa-solid fa-lightbulb"></i>
+      </div>
+    </section>
+
+    <!-- Quick suggestions -->
+    <section class="suggestions">
+      <button class="pill" id="wordOfDay" title="Word of the day"></button>
+      <div id="quickPills" class="quick-pills"></div>
+    </section>
+
+    <!-- Side-by-side layout -->
+    <section class="layout">
+      <!-- Left: output -->
+      <div class="outputbox animate__animated animate__fadeInUp" id="outputbox">
+        <p>Hi, there👋 </p>
+        <i class="fa-solid fa-face-smile"></i>
+        <p>Welcome to English Dictionary</p>
+      </div>
+
+      <!-- Right: sidebar panels -->
+      <aside class="side-panels">
+        <section class="panel">
+          <h3 class="panel-title">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            Recent
+          </h3>
+          <ul id="recentList" class="list"></ul>
+          <button id="clearRecent" class="text-btn">
+            <i class="fa-solid fa-trash"></i> Clear recent
+          </button>
+        </section>
+
+        <section class="panel">
+          <h3 class="panel-title">
+            <i class="fa-solid fa-bookmark"></i>
+            Favorites
+          </h3>
+          <ul id="favoritesList" class="list"></ul>
+          <button id="clearFavorites" class="text-btn">
+            <i class="fa-solid fa-trash"></i> Clear favorites
+          </button>
+        </section>
+      </aside>
+    </section>
+
+    <audio id="audio"></audio>
+  </div>
+
+  <!-- Toast notifications -->
+  <div id="toastContainer" class="toast-container" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

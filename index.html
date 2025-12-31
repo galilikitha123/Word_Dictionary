@@ -1,8 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B3TC7XDL2Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-B3TC7XDL2Y');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Word Dictionary</title>
 
   <!-- Icons & Animations -->
@@ -10,6 +20,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <div class="box">
     <div class="header">
@@ -27,7 +38,7 @@
     </div>
 
     <div class="inputbox">
-      <input type="text" class="search" placeholder="Search your word..." autofocus/>
+      <input type="text" class="search" placeholder="Search your word..." autofocus />
       <button class="btn"><i class="fa-solid fa-magnifying-glass"></i></button>
     </div>
 
@@ -37,7 +48,8 @@
         <div class="wod-title-row">
           <span class="wod-badge">Word of the day</span>
           <div class="wod-actions">
-            <button id="wodRefresh" class="wod-icon" title="Refresh word"><i class="fa-solid fa-rotate-right"></i></button>
+            <button id="wodRefresh" class="wod-icon" title="Refresh word"><i
+                class="fa-solid fa-rotate-right"></i></button>
             <button id="wodCollapse" class="wod-icon" title="Minimize"><i class="fa-solid fa-chevron-up"></i></button>
           </div>
         </div>
@@ -112,4 +124,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
